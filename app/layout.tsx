@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/organisms/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
     description: "Diagnóstico y solución rápida en problemas eléctricos. Contamos con equipos y simuladores de alta definición para motos en Bucaramanga.",
     siteName: "Electromotos",
   },
+  icons: {
+    icon: "https://ugc.production.linktr.ee/Xk3oSJj4Qn6FrczVF5fO_kE51P42GvCpb8c0J?io=true&size=avatar-v3_0",
+  },
   robots: {
     index: true,
     follow: true,
@@ -41,8 +45,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body className={`${inter.className} min-h-screen bg-zinc-950 text-zinc-50 flex flex-col antialiased selection:bg-red-500 selection:text-white`}>
+    <html lang="es" className="scroll-smooth flex-col min-h-screen font-sans bg-white">
+      <body className={`${inter.className} min-h-screen bg-white text-zinc-50 flex flex-col antialiased selection:bg-blue-500 selection:text-white`}>
+        <Header />
         {children}
       </body>
     </html>
