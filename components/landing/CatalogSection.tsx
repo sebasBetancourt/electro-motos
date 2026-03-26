@@ -493,7 +493,7 @@ const CatalogSection: FC = () => {
         select option { background: #fff; color: #000; }
       `}</style>
 
-      <section style={{
+      <section id="catalog" style={{
         background: "#ffffff", minHeight: "100vh",
         fontFamily: "'Inter', system-ui, sans-serif", color: "#000000",
       }}>
