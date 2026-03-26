@@ -3,7 +3,7 @@ import Spline from '@splinetool/react-spline/next';
 
 export function Hero() {
   return (
-    <main className="flex-1 relative">
+    <main className="flex-1 relative" id="hero">
       {/* Floating Side Button (left) */}
       <div className="absolute left-0 top-1/4 z-40 hidden md:block">
         <button className="bg-blue-600 text-white font-bold text-[10px] tracking-widest uppercase py-3 px-2 rounded-r-md transition-transform hover:translate-x-1 shadow-lg" style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
