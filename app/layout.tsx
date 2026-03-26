@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/organisms/Header";
+import { Footer } from "@/components/organisms/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,7 +49,10 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth flex-col min-h-screen font-sans bg-white">
       <body className={`${inter.className} min-h-screen bg-white text-zinc-50 flex flex-col antialiased selection:bg-blue-500 selection:text-white`}>
         <Header />
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

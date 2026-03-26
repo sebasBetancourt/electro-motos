@@ -1,6 +1,3 @@
-import { IconZap } from "../atoms/Icons";
-import Spline from '@splinetool/react-spline/next';
-
 export function Hero() {
   return (
     <main className="flex-1 relative" id="hero">
@@ -12,25 +9,25 @@ export function Hero() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative w-full lg:min-h-[35vh] flex flex-col lg:flex-row bg-white overflow-hidden">
+      <section className="relative w-full h-[350px] lg:h-[450px] 2xl:h-[550px] flex flex-col lg:flex-row bg-white overflow-hidden">
         
         {/* Left Text Box (White BG) */}
         <div className="w-full lg:w-[55%] flex flex-col justify-center items-start px-6 lg:px-12 xl:px-20 py-16 lg:py-24 z-10">
-           <h1 className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem] font-extrabold text-black leading-[1.05] tracking-tighter mb-6">
+           <h1 className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[3.5rem] 2xl:text-[5.5rem] font-extrabold text-black leading-[1.05] tracking-tighter mb-6">
              <span className="block">CALIDAD ELECTRO</span>
              <span className="block">MOTOS TONY.</span>
            </h1>
-           <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-medium text-zinc-800 leading-[1.1] mb-12 tracking-tight">
+           <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.5rem] 2xl:text-[3rem] font-medium text-zinc-800 leading-[1.1] mb-12 tracking-tight">
              DIAGNOSTICO Y SOLUCION RAPIDA<br/>EN FALLAS ELECTRICAS.
            </h2>
            <button className="bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-[13px] md:text-[15px] py-4 md:py-5 px-10 md:px-14 tracking-widest transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)]">
-             AGENDA HOY
+             AGENDA AHORA
            </button>
         </div>
 
         {/* Right Box (Diagonal Tech Blue Container + Product) */}
         <div 
-          className="w-full lg:w-[60%] lg:absolute lg:right-0 lg:top-0 h-[650px] lg:h-full relative overflow-hidden bg-[#0a192f] flex justify-center items-center px-4"
+          className="w-full lg:w-[60%] lg:absolute lg:right-0 lg:top-0 h-[550px] lg:h-full relative overflow-hidden bg-[#0a192f] flex justify-center items-center px-4"
           style={{ clipPath: "polygon(0% 0, 100% 0, 100% 100%, 25% 100%)" }}
         >
           {/* Background mimicking futuristic blue tones */}
@@ -40,14 +37,9 @@ export function Hero() {
             <div className="absolute w-[150%] h-[12px] bg-blue-500/30 top-[40%] transform -rotate-12 blur-[10px]"></div>
             <div className="absolute w-[150%] h-[2px] bg-yellow-400/50 bottom-1/4 transform rotate-12 blur-[2px]"></div>
           </div>
+          <img className="w-full h-full object-cover" src="https://www.motociclismo.es/uploads/s1/94/62/09/8/muelle-valvula.jpeg" alt="" />
 
-          {/* Spline Interactive 3D Model */}
-          <div className="absolute inset-0 z-10 w-full h-full cursor-grab active:cursor-grabbing transition-transform duration-700 ease-out flex items-center justify-center -ml-[30%] lg:-ml-[35%] xl:-ml-[28%] scale-[1.4] lg:scale-[1.5] hover:scale-[1.55]">
-            <Spline
-              scene="https://prod.spline.design/kSSACAwuUuXHjFPK/scene.splinecode"
-              className="w-full h-full outline-none drop-shadow-2xl"
-            />
-          </div>
+          
         </div>
       </section>
 
