@@ -17,8 +17,9 @@ export function Header() {
         <div className="container mx-auto px-4 lg:px-1 h-[88px] flex items-center justify-between">
           
           {/* Logo (Left) */}
-          <Link href="/" className="flex items-center shrink-0">
-            <img src={logoImg} alt="Electro Motos Tony" className="w-auto h-24 sm:h-20 object-contain drop-shadow-sm rounded-full" />
+          <Link href="/" className="flex items-center shrink-0 gap-2">
+            <img src={logoImg} alt="Electro Motos Tony" className="w-auto h-20 sm:h-14 object-contain drop-shadow-sm rounded-full border border-black/60" />
+            <span className=" text-black tracking-[0.1em] text-sm lg:text-md 2xl:text-xl">ElectroMotos Tony</span>
           </Link>
 
           {/* Center Nav */}
