@@ -192,9 +192,31 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontWeight: 800, fontSize: 26, color: "#000000", letterSpacing: "-0.03em" }}>
-                {formatCOP(product.price)}
-              </span>
+              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                {product.oldPrice && (
+                  <span style={{ fontSize: 13, color: "#a1a1aa", textDecoration: "line-through", fontWeight: 500 }}>
+                    {formatCOP(product.oldPrice)}
+                  </span>
+                )}
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ fontWeight: 800, fontSize: 28, color: "#000000", letterSpacing: "-0.03em" }}>
+                    {formatCOP(product.price)}
+                  </span>
+                  {product.oldPrice && (
+                    <span style={{ fontSize: 13, fontWeight: 700, color: "#00a650" }}>
+                      {Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% OFF
+                    </span>
+                  )}
+                </div>
+                {product.freeShipping && (
+                  <span style={{ fontSize: 12, fontWeight: 700, color: "#00a650", marginTop: 2, display: "flex", alignItems: "center", gap: 6 }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" style={{ width: 14, height: 14 }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.806H9" />
+                    </svg>
+                    Envío gratis nacional
+                  </span>
+                )}
+              </div>
               {/* Quantity selector */}
               <div
                 style={{

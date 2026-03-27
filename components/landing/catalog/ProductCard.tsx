@@ -106,9 +106,28 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => (
           borderTop: "1px solid #f4f4f5",
         }}
       >
-        <span style={{ fontWeight: 800, fontSize: 15, color: "#000000", letterSpacing: "-0.02em" }}>
-          {formatCOP(product.price)}
-        </span>
+        <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+          {product.oldPrice && (
+            <span style={{ fontSize: 11, color: "#a1a1aa", textDecoration: "line-through" }}>
+              {formatCOP(product.oldPrice)}
+            </span>
+          )}
+          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontWeight: 800, fontSize: 16, color: "#000000", letterSpacing: "-0.02em" }}>
+              {formatCOP(product.price)}
+            </span>
+            {product.oldPrice && (
+              <span style={{ fontSize: 11, fontWeight: 700, color: "#00a650" }}>
+                {Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% OFF
+              </span>
+            )}
+          </div>
+          {product.freeShipping && (
+            <span style={{ fontSize: 11, fontWeight: 700, color: "#00a650", marginTop: 2 }}>
+              Envío gratis <span style={{ fontWeight: 500, color: "#71717a" }}>nacional</span>
+            </span>
+          )}
+        </div>
         <span
           style={{
             fontSize: 10,

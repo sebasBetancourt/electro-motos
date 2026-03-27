@@ -10,6 +10,9 @@ export interface Product {
   description: string;
   characteristics: string[];
   sku: string;
+  isBestSeller?: boolean;
+  oldPrice?: number;
+  freeShipping?: boolean;
 }
 
 export interface Filters {
